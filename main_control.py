@@ -3,7 +3,7 @@ import datetime
 from gpiozero import Robot
 from time import sleep
 
-from picamera import Camera
+import picamera
 
 #from app.camera_pi import Camera
 
@@ -60,7 +60,7 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(Camera()),
+    return Response(gen(picamera.PiCamera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
