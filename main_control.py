@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request,Response
 import datetime
-from gpiozero import Motor
+from gpiozero import Robot
 from time import sleep
-from app.camera_pi import Camera
-from app import app
+
+from picamera import Camera
+
+#from app.camera_pi import Camera
+
+#from app import app
 
 
 app = Flask(__name__)
