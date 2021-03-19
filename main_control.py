@@ -2,13 +2,7 @@ from flask import Flask, render_template, request,Response
 import datetime
 from gpiozero import Robot
 from time import sleep
-
-import picamera
-
-#from app.camera_pi import Camera
-
-#from app import app
-
+from camera_pi import Camera
 
 app = Flask(__name__)
 
@@ -60,7 +54,7 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(picamera.PiCamera()),
+    return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
