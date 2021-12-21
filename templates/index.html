@@ -5,9 +5,9 @@
 	</head>
 	<body>
 		<img id="video_feed" src="{{ url_for('video_feed') }}">
-		<div style='text-align: center;'>
-			<button name='forward' id='forward' value='forward'>Forward</button>
-		</div>
+        <form method="post">
+          <p><input type="submit" name="submit" value="StopPreview"></p>
+        </form>
 		<div style='text-align: center;'>
 			<button name='left' id='left' value='left'>Left</button>
 			<button name='right' id='right' value='right'>Right</button>
@@ -22,3 +22,5 @@
 		</script>
 	</body>
 </html>
+
+<!DOCTYPE html>
