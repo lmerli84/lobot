@@ -29,4 +29,4 @@ def stop_preview():
         camera.stop_preview()
 
 if __name__ == "__main__":
-    app.run(host='192.168.0.198', port='8080')
+    app.run(host='192.168.1.45', port='3223')
