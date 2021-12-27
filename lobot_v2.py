@@ -12,15 +12,16 @@ def index():
 def gen():
     """Video streaming generator function."""
     while True:
-        frame = camera.get_frame()
+        camera.capture("./templates/image.jpg")
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+               b'Content-Type: image/jpeg\r\n\r\n' + send_file("./templates/image.jpg") + b'\r\n')
 
 @app.route("/video_feed")
 def video_feed():
     while True:
-        camera.capture("./templates/image.jpg")
-        return send_file("./templates/image.jpg")
+        #camera.capture("./templates/image.jpg")
+        #return send_file("./templates/image.jpg")
+        return Response(gen())
 
 if __name__ == "__main__":
      app.run(debug=False, host="0.0.0.0",port=3223)
