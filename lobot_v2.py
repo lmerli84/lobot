@@ -9,7 +9,7 @@ camera = PiCamera()
 def index():
     return render_template("index.html")
 
-@app.route("/image.jpg")
+@app.route("/video_feed")
 def getImage():
      camera.capture("./templates/image.jpg")
      return send_file("./templates/image.jpg")
