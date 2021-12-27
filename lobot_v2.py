@@ -10,7 +10,7 @@ def index():
     return render_template("index.html")
 
 @app.route("/video_feed")
-def getImage():
+def video_feed():
      camera.capture("./templates/image.jpg")
      return send_file("./templates/image.jpg")
 
