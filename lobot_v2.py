@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
                     + '[%(filename)s:%(lineno)s:%(funcName)s()] %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-@app.route("/start", methods=['POST'])
+@app.route("/start", methods=['GET'])
 def start_preview():
     with picamera.PiCamera() as camera:
         camera.resolution = (1920, 1080)
@@ -29,4 +29,4 @@ def stop_preview():
         camera.stop_preview()
 
 if __name__ == "__main__":
-    app.run(host='192.168.1.45', port='3223')
+    app.run(host='0.0.0.0', port='3223')
