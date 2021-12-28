@@ -5,15 +5,22 @@
 	</head>
 	<body>
 		<img id="video_feed" src="{{ url_for('video_feed') }}">
-        <form method="post">
-          <p><input type="submit" name="submit" value="StopPreview"></p>
-        </form>
-		<div style='text-align: center;'>
-			<button name='forward' id='forward' value='forward'>forward</button>
-			<button name='left' id='left' value='left'>Left</button>
-			<button name='right' id='right' value='right'>Right</button>
-			<button name='backward' id='backward' value='backward'>Backward</button>
-		</div>
+        <form method="post" action="{{ url_for('move') }}">
+			<div style='text-align: center;'>
+				<!-- <button name='forward' id='forward' value='forward'>forward</button> -->
+				<input type="submit" name="movement" value="forward">
+			</div>
+			<div style='text-align: center;'>
+				<!-- <button name='left' id='left' value='left'>Left</button>
+				<button name='right' id='right' value='right'>Right</button> -->
+				<input type="submit" name="movement" value="left">
+				<input type="submit" name="movement" value="right">
+			</div>
+			<div style='text-align: center;'>
+				<!-- <button name='backward' id='backward' value='backward'>Backward</button> -->
+				<input type="submit" name="movement" value="backward">
+			</div>
+		</form>
 	</body>
 </html>
 
