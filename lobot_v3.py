@@ -8,6 +8,7 @@ camera = cv2.VideoCapture(cv2.CAP_V4L2)
 def gen_frames():  
     while True:
         success, frame = camera.read()
+        frame = cv2.flip(frame,0) #[0|1|-1]
         if not success:
             break
         else:
