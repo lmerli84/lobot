@@ -8,7 +8,7 @@ import logging
 app = Flask(__name__)
 
 camera = cv2.VideoCapture(cv2.CAP_V4L2)
-robot = Robot(left=(10, 9), right=(8,7))
+robot = Robot(left=(9,10), right=(8,7))
 
 def gen_frames():  
     while True:
@@ -27,24 +27,24 @@ def move():
     movement = request.form['movement']
     #print "post request received with movement: ", movement
     if movement == 'forward':
-        app.logger.info('forward')
-        robot.forward()
-        sleep(2)
+        #app.logger.info('forward')
+        robot.forward(0.5)
+        sleep(1)
         robot.stop()
     if movement == 'left':
-        app.logger.info('left')
-        robot.left()
-        sleep(2)
+        #app.logger.info('left')
+        robot.left(0.5)
+        sleep(1)
         robot.stop()
     if movement == 'right':
-        app.logger.info('right')
-        robot.right()
-        sleep(2)
+        #app.logger.info('right')
+        robot.right(0.5)
+        sleep(1)
         robot.stop()
     if movement == 'backward':
-        app.logger.info('backward')
-        robot.backward()
-        sleep(2)
+        #app.logger.info('backward')
+        robot.backward(0.5)
+        sleep(1)
         robot.stop()
     return  redirect(url_for('index'))
 
