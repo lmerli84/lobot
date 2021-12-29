@@ -1,3 +1,4 @@
 *.jpg
 *.jpeg
 cmd.txt
+./__pycache__
