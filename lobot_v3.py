@@ -14,6 +14,7 @@ def gen_frames():
     while True:
         success, frame = camera.read()
         frame = cv2.flip(frame,0) #[0|1|-1]
+        #frame = cv2.Canny(frame, 120, 120)
         if not success:
             break
         else:
